@@ -16,6 +16,10 @@
 
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container-grid {
     width: 80vw;
     max-width: 1400px;
@@ -41,6 +45,10 @@
 
 header {
     height: 165px;
+}
+
+header button {
+    display: none;
 }
 
 header img {
@@ -78,7 +86,7 @@ header .container-grid {
     text-decoration-color: white;
 }
 
-.conteudo-banner p {
+.conteudo-banner {
     height: calc(100vh - 280px);
 
     display: flex;
@@ -90,6 +98,43 @@ header .container-grid {
 
     font-family: "Anta";
     font-size: 32px;
+}
+
+.conteudo-banner span {
+    display: block;
+
+    overflow: hidden;
+
+    border-right: 5px solid var(--laranja-gamifica);
+    white-space: nowrap;
+
+
+    animation:
+        digitando 2s steps(40, end),
+        cursor 0.75s step-end infinite
+    ;
+}
+
+@keyframes digitando {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes cursor {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--laranja-gamifica);
+    }
 }
 
 #sobre {
@@ -149,7 +194,7 @@ h2 {
 
     border-radius: 4px;
 
-    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
 .card img {
@@ -240,8 +285,8 @@ h2 {
 }
 
 #portifolio a:hover {
-transform: scale(1.05);
-transition: 200ms;
+    transform: scale(1.05);
+    transition: 200ms;
 }
 
 #contato {
@@ -266,7 +311,7 @@ transition: 200ms;
     align-items: center;
 
     border-radius: 80px;
-    background-color: var(--roxo-gamifica); 
+    background-color: var(--roxo-gamifica);
 
     color: white;
     font-family: "Montserrat";
@@ -325,11 +370,13 @@ transition: 200ms;
     resize: none;
 }
 
-.campo label, .campo-descricao label {
+.campo label,
+.campo-descricao label {
     margin-bottom: 15px;
 }
 
-.campo input, .campo-descricao textarea {
+.campo input,
+.campo-descricao textarea {
     font-family: "Montserrat";
     font-size: 17px;
 }
@@ -340,7 +387,7 @@ transition: 200ms;
 }
 
 .campo input:focus,
-.campo-descricao textarea:focus { 
+.campo-descricao textarea:focus {
     outline: 2px solid var(--laranja-gamifica);
 }
 
@@ -376,7 +423,7 @@ footer {
 }
 
 footer .container-grid {
-    height: 100% ;
+    height: 100%;
 
     display: flex;
     justify-content: space-between;
@@ -413,4 +460,55 @@ footer .container-grid {
 .icones-redes a:hover {
     color: var(--laranja-gamifica);
 }
- 
+
+@media screen and (max-width: 1300px) {
+    header {
+        position: relative;
+    }
+
+    header button {
+        width: 50px;
+
+        display: unset;
+
+        background: none;
+        border: none;
+    }
+
+    header svg {
+        fill: white;
+    }
+
+    nav.menu {
+        height: 500px;
+        width: 350px;
+
+        padding: 0px 30px;
+
+        flex-direction: column;
+        justify-content: space-around;
+
+        background-color: #000000da;
+
+        position: absolute;
+        top: 165px;
+        right: 0px;
+    }
+
+#sobre {
+    padding: 100px 15%;
+}
+
+.card {
+    height: 320px;
+    width: 200px;
+}
+
+#contato form {
+    width: 75%;
+}
+}
+
+@media screen and (max-width: 1080px) {
+
+}
