@@ -24,23 +24,89 @@ html {
     width: 80vw;
     max-width: 1400px;
 
-    /* margin 20px - Espaçamento externo de 20px */
-    /* margin 20px 10px - Espaçamento 20px na vertical, 10px na horizontal*/
-    /* margin 20px 10px 5px - Espaçamento 20px para cima, 10px na horizontal, 5px para baixo */
-    /* margin 20px 10px 5px 2px - Espaçamento 20px para cima, 10px para a direita, 5px para baixo, 2px para a esquerda */
+    /* margin: 20px - Espaçamento externo de 20px */
+    /* margin: 20px 10px - Espaçamento 20px na vertical, 10px na horizontal */
+    /* margin: 20px 10px 5px - Espaçamento 20px para cima, 10px na horizontal, 5px para baixo */
+    /* margin: 20px 10px 5px 2px - Espaçamento 20px para cima, 10px para a direita, 5px para baixo, 2px para a esquerda */
 
     margin: 0 auto;
 }
 
 .banner {
-    /* vh é a porcentagem da ALTURA da telas */
+    /* vh é a porcentagem da ALTURA da tela */
     /* vw é a porcentagem da LARGURA da tela */
     height: 100vh;
 
-    background-image: linear-gradient(90deg, rgba(53, 24, 104, 1) 0%, rgba(53, 24, 104, 0.8) 100%), url(img/bg-room.png);
     background-repeat: no-repeat;
 
     background-position: 165% 40%;
+
+    position: relative;
+}
+
+.primeiro-banner {
+    background-image: linear-gradient(90deg, rgba(53, 24, 104, 1) 0%, rgba(53, 24, 104, 0.8) 100%), url(img/bg-room.png);
+}
+
+.segundo-banner {
+    background-image: linear-gradient(90deg, rgba(24, 104, 36, 1) 0%, rgba(24, 104, 36, 0.8) 100%), url(img/bg-room.png);
+}
+
+.terceiro-banner {
+    background-image: linear-gradient(90deg, rgba(104, 24, 48, 1) 0%, rgba(53, 24, 104, 0.8) 100%), url(img/bg-room.png);
+}
+
+#botao-voltar, #botao-proximo {
+    width: 30px;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    position: absolute;
+}
+
+#botao-voltar svg, #botao-proximo svg {
+    fill: #ffffff76;
+}
+
+#botao-voltar {
+    left: 4%;
+}
+
+#botao-proximo {
+    right: 4%;
+}
+
+.botoes {
+    width: 150px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+    bottom: 4%;
+
+    /* Centralizar usando position */
+    /* Adicionar left 50% */
+    /* Usar função calc() para subtrair metade da largura do elemento Ex.: 75px */
+    left: calc(50% - 75px);    
+}
+
+.botoes button {
+    width: 30px;
+
+    display: unset;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.botoes button svg {
+    fill: #ffffff76;
 }
 
 header {
@@ -49,6 +115,7 @@ header {
 
 header button {
     display: none;
+    cursor: pointer;
 }
 
 header img {
@@ -72,14 +139,14 @@ header .container-grid {
 
 .menu a {
     font-size: 18px;
-    font-family: "Anta";
+    font-family: 'Anta';
 
     color: white;
 
     text-decoration: underline transparent;
     text-decoration-thickness: 2px;
 
-    transition: text-decoration 500ms ease;
+    transition: text-decoration 500ms ease;    
 }
 
 .menu a:hover {
@@ -108,8 +175,7 @@ header .container-grid {
     border-right: 5px solid var(--laranja-gamifica);
     white-space: nowrap;
 
-
-    animation:
+    animation: 
         digitando 2s steps(40, end),
         cursor 0.75s step-end infinite
     ;
@@ -126,7 +192,6 @@ header .container-grid {
 }
 
 @keyframes cursor {
-
     from,
     to {
         border-color: transparent;
@@ -192,9 +257,9 @@ h2 {
 
     background-color: var(--roxo-gamifica);
 
-    border-radius: 4px;
+    border-radius: 4px; 
 
-    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 .card img {
@@ -239,7 +304,7 @@ h2 {
     background-color: #ad4929;
 }
 
-#portifolio {
+#portfolio {
     height: 250px;
 
     background-image: url(img/bonecos.png);
@@ -263,7 +328,7 @@ h2 {
     left: 0;
 }
 
-#portifolio .container-grid {
+#portfolio .container-grid {
     height: 100%;
 
     display: flex;
@@ -271,11 +336,11 @@ h2 {
     justify-content: center;
 }
 
-#portifolio a {
+#portfolio a {
     width: fit-content;
 
-    color: white;
-
+    color: white;  
+    
     font-family: "Anta";
     font-size: 28px;
 
@@ -284,7 +349,7 @@ h2 {
     transition: 200ms;
 }
 
-#portifolio a:hover {
+#portfolio a:hover {
     transform: scale(1.05);
     transition: 200ms;
 }
@@ -370,13 +435,11 @@ h2 {
     resize: none;
 }
 
-.campo label,
-.campo-descricao label {
+.campo label, .campo-descricao label {
     margin-bottom: 15px;
 }
 
-.campo input,
-.campo-descricao textarea {
+.campo input, .campo-descricao textarea {
     font-family: "Montserrat";
     font-size: 17px;
 }
@@ -403,7 +466,7 @@ h2 {
 
     font-size: 17px;
     font-family: "Montserrat";
-    font-weight: 700;
+    font-weight: 700; /* Bold */
 
     text-transform: uppercase;
 
@@ -432,7 +495,7 @@ footer .container-grid {
 
 .redes-sociais {
     height: 50%;
-
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -461,7 +524,15 @@ footer .container-grid {
     color: var(--laranja-gamifica);
 }
 
+/* OK - Scroll nos links */
+/* OK - Favicon */
+/* Animação do banner */
+
 .menu-fechado {
+    display: none;
+}
+
+#icone-barras {
     display: none;
 }
 
@@ -482,7 +553,7 @@ footer .container-grid {
     header svg {
         fill: white;
     }
-
+    
     nav.menu {
         height: 500px;
         width: 350px;
@@ -499,20 +570,20 @@ footer .container-grid {
         right: 0px;
     }
 
-#sobre {
-    padding: 100px 15%;
-}
+    #sobre {
+        padding: 100px 15%;
+    }
 
-.card {
-    height: 320px;
-    width: 200px;
-}
+    .card {
+        height: 320px;
+        width: 200px;
+    }
 
-#contato form {
-    width: 75%;
-}
+    #contato form {
+        width: 75%;
+    }
 }
 
 @media screen and (max-width: 1080px) {
- 
+    
 }
